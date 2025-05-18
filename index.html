@@ -4,10 +4,13 @@
        <meta name="description" content="olguita viejo nomas">
        <meta name="lenguage" content="es">
        <link rel="stylesheet" href="./estilos.css">
+       <title>olguitaviejonomas</title>
     </head>
     <body>
         <header>
-            <img src="./Imagenes/olgaheader.png" alt="olgaheader" class="loguito">
+            <div class="barra">
+                <img src="./Imagenes/logofooter.png" alt="olgaheader" class="loguito">
+            </div>
             <div class="princpio">
                 <h1>Que no te lo cuenten:  <br>  vivilo con OLGA.</h1>
                 <br>
@@ -23,13 +26,37 @@
                 <p>Entérate antes que nadie del material exclusivo que forma parte de los especiales. Vas a recibir acceso anticipado a contenido que no se publica en ningún otro lado.</p>
             </div>
         </section>
-        <section>
-            <h2>Enterate primero</h2>
-            /* carrusel de imagenes */
+        <section class="enterate">
+            <h1>ENTÉRATE PRIMERO:</h1>
+            <div class="cardslide">
+                <div class="card-track">
+                    <img src="./Imagenes/bullet2.png" alt="bullet2" class="card-img">
+                    <img src="./Imagenes/bullet1.png" alt="bullet1" class="card-img">
+                    <img src="./Imagenes/bullet3.png" alt="bullet3" class="card-img">
+                </div>
+                <div class="indigo">
+                    <span class="doti" data-index="0"></span>
+                    <span class="doti active" data-index="1"></span>
+                    <span class="doti" data-index="2"></span>
+                </div>
+            </div>
         </section>
-        <section>
-            <h2>Especiales Olga</h2>
-            /* carrusel de imagenes */
+        <section class="especiales-olga">
+            <h1>Especiales más populares de olga</h1>
+            <div class="carruseltrack">
+            <div class="carrusel">
+                <img src="./Imagenes/especial1.png"  alt="Especial 1" id="especial1">
+                <img src="./Imagenes/especial2.png" alt="Especial 2" id="especial2">
+                <img src="./Imagenes/especial3.png" alt="Especial 3" id="especial3">
+                <img src="./Imagenes/especial4.png" alt="Especial 4" id="especial4">
+            </div>
+            <div class="carruselindi">
+                <a href="#especial1" class="dot"></a>
+                <a href="#especial2" class="dot"></a>
+                <a href="#especial3" class="dot"></a>
+                <a href="#especial4" class="dot"></a>
+            </div>
+            </div>
         </section>
         <section class="finalpage">
             <h1>Que no te lo cuenten:  <br>  vivilo con OLGA.</h1>
@@ -39,7 +66,7 @@
         </section>
         <footer class="footer">
             <div class="footcolpreg">
-                <h3>Preguntas frecuentes</h3>
+                <img src="./Imagenes/logofooter.png" alt="logofooter">
             </div>
             <div class="footcolleg">
                 <h3>Legal</h3>
@@ -53,5 +80,6 @@
                 redes proximas
             </div>
         </footer>
+        <script src="./script.js"></script>
     </body>
 </html>
