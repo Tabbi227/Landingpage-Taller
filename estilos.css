@@ -78,8 +78,12 @@ h3 {
     border-radius: 50px; 
     border: none;
     font-size: 48;
+    font-weight: lighter;
     cursor: pointer;
     padding: 10px 40px;
+}
+.boton:hover {
+    background-color: #c20034;
 }
 .contenido-inedito {
     display: flex;
@@ -144,7 +148,7 @@ h3 {
     margin-top: 20px;
     gap: 10px;
 }
-.dot {
+.dot-especial{
     width: 15px;
     height: 15px;
     opacity: 0.75;
@@ -153,7 +157,10 @@ h3 {
     border-radius: 50%;
     cursor: pointer;
 }
-.dot:hover {
+.dot-especial:hover {
+    background-color: #333;
+}
+.dot-especial.active {
     background-color: #333;
 }
 .enterate {
@@ -208,6 +215,9 @@ h3 {
 .doti.active {
     background-color: #333;
 }
+.doti:hover {
+    background-color: #333;
+}
 .finalpage {
     margin-top: 100px;
     background-image: url("./Imagenes/fondoolga.png");
@@ -245,4 +255,88 @@ h3 {
     grid-area: footcolred;
     display: flex;
     justify-content: center;
+    margin-top: 35px;
 }
+
+#modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.70);
+  backdrop-filter: blur(3px);
+}
+#modal {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-image: url("./Imagenes/form.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 30px;
+    max-width: 595px;
+    max-height: 753px;
+    height: 100%;
+    width: 100%;
+    padding: 70px 40px;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0); 
+}
+#modal h3 {
+    font-size: 40px;
+}
+#modal p {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+#modal h2 {
+    font-size: 40px;
+    margin-left: 45px;
+    text-align: left;
+}
+#modal input {
+    max-width: 442px;
+    max-height: 56px;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    font-family:"nunito";
+    font-size: large;
+    margin-bottom: 15px;
+    border-radius: 16px;
+    border: 1px solid #ccc;
+}
+#modal .boton {
+    margin-top: 20px;
+    padding: 12px 24px;
+    scale: 80%;
+}
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+#pantalla-gracias {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Imagenes/formgracias.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    z-index: 2;
+}
+#btn-cerrar-modal {
+    z-index: 3;
+}
+.oculto {
+    display: none;
+}
+

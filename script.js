@@ -17,3 +17,43 @@ dots.forEach((dot, i) => {
 window.addEventListener('load', () => {
     scrollToIndex(1);
 });
+
+const carrusel = document.querySelector('.carrusel');
+const especiales = document.querySelectorAll('.especial-img');
+const dotsEspecial = document.querySelectorAll('.dot-especial');
+function scrollToEspecial(index) {
+    const imgWidth = especiales[0].offsetWidth;
+    const scrollLeft = especiales[index].offsetLeft - (carrusel.offsetWidth - imgWidth) / 2;
+    carrusel.scrollTo({
+        left: scrollLeft,
+        behavior: 'smooth'
+    });
+    dotsEspecial.forEach(d => d.classList.remove('active'));
+    dotsEspecial[index].classList.add('active');
+}
+dotsEspecial.forEach((dot, i) => {
+    dot.addEventListener('click', () => scrollToEspecial(i));
+});
+
+
+
+const btnAbrirModal = document.querySelector("#btn-abrir-modal");
+const btnCerrarModal = document.querySelector("#btn-cerrar-modal");
+const modal = document.querySelector("#modal");
+const formulario = document.getElementById("formulario-modal");
+const pantallaGracias = document.getElementById("pantalla-gracias");
+btnAbrirModal.addEventListener("click", () => {
+  modal.showModal();
+  mensajeGracias.classList.add("oculto"); // 
+});
+btnCerrarModal.addEventListener("click", () => {
+  modal.close();
+});
+formulario.addEventListener("submit", function (e) {
+  e.preventDefault();
+  pantallaGracias.classList.remove("oculto");
+});
+
+
+
+

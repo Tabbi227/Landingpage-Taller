@@ -16,7 +16,7 @@
                 <br>
                 <br>
                 <p class="pprin">Suscribite y accedé antes que nadie a los Especiales OLGA. Sé parte de la comunidad más activa.</p>
-                <a href="#" class="boton">QUIERO SER PARTE</a>
+                <a href="#" class="boton" id="btn-abrir-modal">QUIERO SER PARTE</a>
             </div>
         </header>
         <section class="contenido-inedito">
@@ -44,25 +44,25 @@
         <section class="especiales-olga">
             <h1>Especiales más populares de olga</h1>
             <div class="carruseltrack">
-            <div class="carrusel">
-                <img src="./Imagenes/especial1.png"  alt="Especial 1" id="especial1">
-                <img src="./Imagenes/especial2.png" alt="Especial 2" id="especial2">
-                <img src="./Imagenes/especial3.png" alt="Especial 3" id="especial3">
-                <img src="./Imagenes/especial4.png" alt="Especial 4" id="especial4">
-            </div>
-            <div class="carruselindi">
-                <a href="#especial1" class="dot"></a>
-                <a href="#especial2" class="dot"></a>
-                <a href="#especial3" class="dot"></a>
-                <a href="#especial4" class="dot"></a>
-            </div>
+                <div class="carrusel">
+                    <img src="./Imagenes/especial1.png" alt="Especial 1" class="especial-img">
+                    <img src="./Imagenes/especial2.png" alt="Especial 2" class="especial-img">
+                    <img src="./Imagenes/especial3.png" alt="Especial 3" class="especial-img">
+                    <img src="./Imagenes/especial4.png" alt="Especial 4" class="especial-img">
+                </div>
+                <div class="carruselindi">
+                    <span class="dot-especial active" data-index="0"></span>
+                    <span class="dot-especial" data-index="1"></span>
+                    <span class="dot-especial" data-index="2"></span>
+                    <span class="dot-especial" data-index="3"></span>
+                </div>
             </div>
         </section>
         <section class="finalpage">
             <h1>Que no te lo cuenten:  <br>  vivilo con OLGA.</h1>
             <br>
             <br>
-            <a href="#" class="boton">QUIERO SER PARTE</a>
+            <a href="#" class="boton" id="btn-abrir-modal">QUIERO SER PARTE</a>
         </section>
         <footer class="footer">
             <div class="footcolpreg">
@@ -77,9 +77,24 @@
                 </ul>
             </div>
             <div class="footcolred">
-                redes proximas
+                <img src="./Imagenes/socialmediaolga.png" alt="redes">
             </div>
         </footer>
+        <dialog id="modal">
+            <form method="dialog" id="formulario-modal">
+                <button type="button" id="btn-cerrar-modal" class="cerrar-modal">×</button>
+                <h3>Sé parte de la comunidad más activa</h3>
+                <p>Ingresá tus datos y elegí qué programas de Olga te interesan.</p>
+                <h2 for="nombre">Nombre</h2>
+                <input type="text" id="nombre" required>
+                <h2 for="email">Email</h2>
+                <input type="email" id="email" required>
+                <h2 for="preferencias">Programas de tu preferencia</h2>
+                <input type="text" id="preferencias">
+                <button type="submit" class="boton">QUIERO SER PARTE</button>
+                <div id="pantalla-gracias" class="oculto"></div>
+            </form>
+        </dialog>
         <script src="./script.js"></script>
     </body>
 </html>
