@@ -17,7 +17,7 @@
                 <br>
                 <br>
                 <p class="pprin">Suscribite y accedé antes que nadie a los Especiales OLGA. Sé parte de la comunidad más activa.</p>
-                <a href="#" class="boton" id="btn-abrir-modal">QUIERO SER PARTE</a>
+                <a href="#" class="boton btn-abrir-modal">QUIERO SER PARTE</a>
             </div>
         </header>
         <section class="contenido-inedito">
@@ -31,9 +31,18 @@
             <h1>ENTERATE PRIMERO:</h1>
             <div class="cardslide">
                 <div class="card-track">
-                        <img src="./Imagenes/bullet2.png" alt="bullet2" class="card-img">
-                        <img src="./Imagenes/bullet1.png" alt="bullet1" class="card-img">
-                        <img src="./Imagenes/bullet3.png" alt="bullet3" class="card-img">
+                    <picture class="card-img">
+                        <source media="(max-width: 768px)" srcset="./Imagenes/bullet2mobile.png">
+                        <img src="./Imagenes/bullet2.png" alt="bullet2" class="card-img-img">
+                    </picture>
+                    <picture class="card-img">
+                        <source media="(max-width: 768px)" srcset="./Imagenes/bullet1mobile.png">
+                        <img src="./Imagenes/bullet1.png" alt="bullet1" class="card-img-img">
+                    </picture>
+                    <picture class="card-img">
+                        <source media="(max-width: 768px)" srcset="./Imagenes/bullet3mobile.png">
+                        <img src="./Imagenes/bullet3.png" alt="bullet3" class="card-img-img">
+                    </picture>
                 </div>
                 <div class="indigo">
                     <span class="doti" data-index="0"></span>
@@ -64,18 +73,18 @@
             <br>
             <br>
             <br>
-            <a href="#" class="boton" id="btn-abrir-modal">QUIERO SER PARTE</a>
+            <a href="#" class="boton btn-abrir-modal">QUIERO SER PARTE</a>
         </section>
         <footer class="footer">
             <div class="footcolpreg">
                 <img src="./Imagenes/logofooter.png" alt="logofooter">
             </div>
             <div class="footcolleg">
-                <h3>Legal</h3>
+                <h3>CREDITOS</h3>
                 <ul>
-                    <p>Politicas y privacidad</p>
-                    <p>Cookies</p>
-                    <p>Terminos de servicio</p>
+                    <p>Diseñadores e Implementadores</p>
+                    <p>Alexia Roberts</p>
+                    <p>Agustin Tabbita</p>
                 </ul>
             </div>
             <div class="footcolred">
@@ -94,7 +103,9 @@
                 <h2 for="preferencias">Programas de tu preferencia</h2>
                 <input type="text" id="preferencias">
                 <button type="submit" class="boton">QUIERO SER PARTE</button>
-                <div id="pantalla-gracias" class="oculto"></div>
+                <div id="pantalla-gracias" class="oculto">
+                    <h2>Bienvenidx <span id="nombre-usuario"></span>, ya sos parte de la comunidad más activa de olga</h2>
+                </div>
             </form>
         </dialog>
         <script src="./script.js"></script>

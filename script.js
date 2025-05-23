@@ -17,7 +17,22 @@ dots.forEach((dot, i) => {
 window.addEventListener('load', () => {
     scrollToIndex(1);
 });
-
+track.addEventListener('scroll', () => {
+    const scrollLeft = track.scrollLeft;
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+    cards.forEach((card, index) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const trackCenter = scrollLeft + track.offsetWidth / 2;
+        const distance = Math.abs(trackCenter - cardCenter);
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+        }
+    });
+    dots.forEach(d => d.classList.remove('active'));
+    dots[closestIndex].classList.add('active');
+});
 const carrusel = document.querySelector('.carrusel');
 const especiales = document.querySelectorAll('.especial-img');
 const dotsEspecial = document.querySelectorAll('.dot-especial');
@@ -28,31 +43,59 @@ function scrollToEspecial(index) {
         left: scrollLeft,
         behavior: 'smooth'
     });
+    updateDots(index);
+}
+function updateDots(index) {
     dotsEspecial.forEach(d => d.classList.remove('active'));
-    dotsEspecial[index].classList.add('active');
+    if (dotsEspecial[index]) {
+        dotsEspecial[index].classList.add('active');
+    }
 }
 dotsEspecial.forEach((dot, i) => {
     dot.addEventListener('click', () => scrollToEspecial(i));
 });
+carrusel.addEventListener('scroll', () => {
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+    const carruselCenter = carrusel.scrollLeft + carrusel.offsetWidth / 2;
+    especiales.forEach((img, i) => {
+        const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+        const distance = Math.abs(carruselCenter - imgCenter);
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = i;
+        }
+    });
+    updateDots(closestIndex);
+});
 
-
-
-const btnAbrirModal = document.querySelector("#btn-abrir-modal");
+const btnsAbrirModal = document.querySelectorAll(".btn-abrir-modal");
 const btnCerrarModal = document.querySelector("#btn-cerrar-modal");
 const modal = document.querySelector("#modal");
 const formulario = document.getElementById("formulario-modal");
 const pantallaGracias = document.getElementById("pantalla-gracias");
-btnAbrirModal.addEventListener("click", () => {
-  modal.showModal();
-  mensajeGracias.classList.add("oculto"); // 
+btnsAbrirModal.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.showModal();
+    pantallaGracias.classList.add("oculto");
+  });
 });
 btnCerrarModal.addEventListener("click", () => {
   modal.close();
 });
 formulario.addEventListener("submit", function (e) {
   e.preventDefault();
+  const nombre = document.getElementById("nombre").value.trim();
+  const nombreUsuarioSpan = document.getElementById("nombre-usuario");
+  if (nombre !== "") {
+    nombreUsuarioSpan.textContent = nombre;
+  } else {
+    nombreUsuarioSpan.textContent = "usuario";
+  }
   pantallaGracias.classList.remove("oculto");
 });
+
 
 
 
