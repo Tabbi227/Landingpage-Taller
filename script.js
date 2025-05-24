@@ -69,6 +69,8 @@ carrusel.addEventListener('scroll', () => {
     updateDots(closestIndex);
 });
 
+
+
 const btnsAbrirModal = document.querySelectorAll(".btn-abrir-modal");
 const btnCerrarModal = document.querySelector("#btn-cerrar-modal");
 const modal = document.querySelector("#modal");
@@ -95,6 +97,16 @@ formulario.addEventListener("submit", function (e) {
   }
   pantallaGracias.classList.remove("oculto");
 });
+const nombreInput = document.getElementById("nombre");
+const emailInput = document.getElementById("email");
+const btnEnviar = document.getElementById("btn-enviar");
+function validarFormulario() {
+  const nombreValido = nombreInput.value.trim() !== "";
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());
+  btnEnviar.disabled = !(nombreValido && emailValido);
+}
+nombreInput.addEventListener("input", validarFormulario);
+emailInput.addEventListener("input", validarFormulario);
 
 
 
